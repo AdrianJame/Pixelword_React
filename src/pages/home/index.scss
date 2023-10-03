@@ -1,5 +1,6 @@
 .pagina-pixelhome{
-    min-height: 100Vh;
+
+    padding-bottom: 100px;
 
     background-color: #343434;
 
@@ -193,7 +194,7 @@
 
         padding: 40px 0px;
 
-        margin-bottom: 60px;
+        margin-bottom: 100px;
 
         gap: 30px;
 
@@ -283,5 +284,183 @@
 
             transform: translate(0px, -5px);
         }
+    }
+
+    .pixelhome-s3{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1{
+            font-size: 25px;
+
+            width: 78vw;
+
+            margin-bottom: 20px;
+        }
+
+
+        .card-s3{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            color: #000;
+
+            margin-bottom: 50px;
+
+            background-color: #fff;
+
+            padding: 10px 20px;
+
+            width: 80vw;
+
+            border-radius: 12px;
+
+            .card-p1{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                gap: 40px;
+
+                height: 100%;
+
+                .card-input{
+                    display: flex;
+                    flex-direction: row;
+                    position: relative;
+
+                    height: 50px;
+
+                    width: 260px;
+
+                    border: 1px solid #00000081;
+                    border-radius: 7px;
+
+                    input{
+                        padding: 0px 10px;
+
+                        outline: 0;
+                        border: none;
+
+                        height: 100%;
+                        width: 85%;
+
+                        font-size: 16px;
+                    }
+
+                    img{
+                        position: absolute;
+                        right: 10px;
+                        top: 8px;
+
+                        height: 30px;
+
+                        cursor: pointer;
+                    }
+                }
+
+                .card-filtro{
+                    display: flex;
+                    align-items: center;
+                    
+                    gap: 8px;
+
+                    img{
+                        height: 30px;
+                    }
+
+                    p{
+                        font-size: 20px;
+                    }
+                }
+            }
+            
+            .card-p2{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                gap: 40px;
+
+                .card-categoria{
+                    display: flex;
+                    align-items: center;
+                    
+                    gap: 8px;
+
+                    img{
+                        height: 30px;
+                    }
+
+                    p{
+                        font-size: 20px;
+                    }
+                }
+
+                .card-maisproduto{
+                    display: flex;
+                    align-items: center;
+
+                    justify-content: center;
+
+                    padding: 20px;
+
+                    width: 180px;
+
+                    gap: 8px;
+                    
+                    height: 60px;
+
+                    border-radius: 10px;
+
+                    cursor: pointer;
+
+                    background: linear-gradient(270deg, #021575 -5.92%, #2D4FFF 92.11%);
+                
+                    img{
+                        height: 25px;
+                    }
+
+                    h6{
+                        font-size: 20px;
+                        font-weight: 400;
+
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .s3-titulos{
+        display: flex;
+        flex-direction: row;
+
+        gap: 40px;
+
+        padding: 0px 35px;
+
+        width: 80vw;
+
+        margin-bottom: 20px;
+
+        p{
+            width: 120px;
+
+            text-align: center;
+
+            font-weight: 500;
+        }
+    }
+
+    .s3-linha{
+        background-color: #fff;
+
+        width: 80vw;
+
+        height: 1px;
     }
 }

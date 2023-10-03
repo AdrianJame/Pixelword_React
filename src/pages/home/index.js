@@ -65,6 +65,49 @@ export default function PixelHome(){
 
                 <Link>Salvar</Link>
             </section>
+
+            <section className='pixelhome-s3'>
+                <h1>Produtos</h1>
+
+                <div className='card-s3'>
+                    <div className='card-p1'>
+                        <section className='card-input'>
+                            <input placeholder='Buscar produto'/>
+                            <img src='/assets/images/Vector.svg'/>
+                        </section>
+
+                        <section className='card-filtro'>
+                            <img src='/assets/images/filtro.svg'/>
+                            <p>Fitro</p>
+                        </section>
+                    </div>
+
+                    <div className='card-p2'>
+                        <section className='card-categoria'>
+                            <img src='/assets/images/categoria.svg'/>
+                            
+                            <p>Categorias</p>
+                        </section>
+
+                        <section className='card-maisproduto'>
+                            <img src='/assets/images/mais.svg'/>
+                            <h6>PRODUTO</h6>
+                        </section>
+                    </div>
+                </div>
+
+                <section className='s3-titulos'>
+                    <p>Categoria</p>
+                    <p>Marca</p>
+                    <p>Nome</p>
+                    <p>Estoque</p>
+                    <p>Preço</p>
+                    <p>Garantia</p>
+                </section>
+                <div className='s3-linha'></div>
+
+                {/* aqui vai ficar o map */}
+            </section>
         </div>
     )
 }
