@@ -3,9 +3,11 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export default function PixelHome(){
     const[erro , setErro] = useState('')
+    const[listartipos, setListarTipos] = useState([])
     const[listar, setListar] = useState([])
 
     const[marca , setMarca] = useState('')
@@ -13,8 +15,9 @@ export default function PixelHome(){
     const[estoque , setEstoque] = useState('')
     const[preco , setPreco] = useState('')
     const[garantia , setGarantia] = useState('')
-    const[categoria , setCategoria] = useState(0)
+    const[categoria , setCategoria] = useState('')
     const[id, setId] = useState(0)
+
 
     async function limpar(){
         setCategoria(0)
@@ -26,17 +29,24 @@ export default function PixelHome(){
         setId(0)
       }
 
+    async function ListarCategorias(){
+        let r = await axios.get('http://localhost:5000/listar/categoria')
+        setListarTipos(r.data)
+    }
+
     async function Listar(){
         let r = await axios.get('http://localhost:5000/listar')
         setListar(r.data)
     }
 
+    
+
     useEffect(() => {
-        Listar()
+        ListarCategorias()
     }, [])
 
     async function Alterar(item){
-        setCategoria(0)
+        setCategoria(item.id_categoria)
         setMarca(item.nm_marca)
         setNome(item.nm_produto)
         setEstoque(item.ds_estoque)
@@ -57,16 +67,17 @@ export default function PixelHome(){
                 }
     
                 if(id == 0){
-                    let r = await axios.post('http://localhost:5000/inserir', produto)
+                    let r = await axios.post('http://localhost:5000/produto', produto)
                     setErro('Produto adicionado')
                 }
     
-                else if(id != 0){
+                else{
                     let r = await axios.put('http://localhost:5000/alterar/' + id, produto);
                     setErro('Produto alterado')
                 }
     
                 limpar()
+                Listar()
     }
     catch(err){
       setErro(err.response.data.erro)
@@ -141,8 +152,8 @@ export default function PixelHome(){
                     <section className='s2-inputs'>
                         <select value={categoria} onChange={e => setCategoria(e.target.value)}>
                             <option>CATEGORIAS</option>
-                            {listar.map(item =>
-                                <option>{item.nm_categoria}</option>
+                            {listartipos.map(item =>
+                                <option value={item.id_categoria}>{item.nm_categoria}</option>
                             )}
                         </select>
 
@@ -174,12 +185,12 @@ export default function PixelHome(){
                     <div className='card-p1'>
                         <section className='card-input'>
                             <input placeholder='Buscar produto'/>
-                            <img src='/assets/images/Vector.svg'/>
+                            <img onClick={Listar} src='/assets/images/Vector.svg'/>
                         </section>
 
                         <section className='card-filtro'>
                             <img src='/assets/images/filtro.svg'/>
-                            <p>Fitro</p>
+                            <p>Filtro</p>
                         </section>
                     </div>
 
