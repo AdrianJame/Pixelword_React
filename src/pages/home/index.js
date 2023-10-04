@@ -43,6 +43,7 @@ export default function PixelHome(){
 
     useEffect(() => {
         ListarCategorias()
+        Listar()
     }, [])
 
     async function Alterar(item){
@@ -58,10 +59,10 @@ export default function PixelHome(){
     async function Salvar(){
             try{
                 let produto = {
-                    categoria: categoria,
+                    idcategoria: categoria,
                     marca: marca,
                     nome: nome,
-                    preco: preco,
+                    preço: preco,
                     estoque: estoque,
                     garantia: garantia
                 }
