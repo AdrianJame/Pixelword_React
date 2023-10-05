@@ -108,7 +108,6 @@ export default function PixelHome(){
   } 
 
 
-
     return(
         <div className='pagina-pixelhome'>
             <header className='pixelhome-cabe'>
