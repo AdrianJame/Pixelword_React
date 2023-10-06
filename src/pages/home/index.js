@@ -9,7 +9,6 @@ export default function PixelHome(){
     const[erro , setErro] = useState('')
     const[listartipos, setListarTipos] = useState([])
     const[listar, setListar] = useState([])
-
     const[marca , setMarca] = useState('')
     const[nome , setNome] = useState('')
     const[estoque , setEstoque] = useState('')
@@ -17,7 +16,6 @@ export default function PixelHome(){
     const[garantia , setGarantia] = useState('')
     const[categoria , setCategoria] = useState('')
     const[id, setId] = useState(0)
-
 
     async function limpar(){
         setCategoria(0)
@@ -38,8 +36,6 @@ export default function PixelHome(){
         let r = await axios.get('http://localhost:5000/listar')
         setListar(r.data)
     }
-
-    
 
     useEffect(() => {
         ListarCategorias()
@@ -84,8 +80,6 @@ export default function PixelHome(){
       setErro(err.response.data.erro)
     }
   }
-
-
   async function Deletar(id){
     confirmAlert({
       title: 'PRODUTOS',
@@ -106,8 +100,6 @@ export default function PixelHome(){
     });
     
   } 
-
-
     return(
         <div className='pagina-pixelhome'>
             <header className='pixelhome-cabe'>
