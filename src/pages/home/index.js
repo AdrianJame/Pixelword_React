@@ -56,9 +56,9 @@ export default function PixelHome(){
             try{
                 let produto = {
                     idcategoria: categoria,
-                    marca: marca,
+                    marca: marca,                                   
                     nome: nome,
-                    preço: preco,
+                    preco: preco,
                     estoque: estoque,
                     garantia: garantia
                 }
@@ -89,7 +89,7 @@ export default function PixelHome(){
           label: 'Sim',
           onClick: async () => {
             let r = await axios.delete('http://localhost:5000/deletar/' + id);
-            alert('Veículo foi removido com sucesso');
+            alert('Produto foi removido com sucesso');
             Listar()
           }
         },
